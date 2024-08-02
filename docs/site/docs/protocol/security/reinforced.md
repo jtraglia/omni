@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Reinforced Security
 
-Omni achieves stronger and more stable security guarantees than existing interoperability protocols by deriving its cryptoeconomic security from restaked **\$ETH**. Omni extends its security model further by incorporating staked **\$OMNI** using a dual staking model. Effectively, the total cryptoeconomic security of Omni is determined by the combined value of restaked **\$ETH** and staked **\$OMNI**.
+Omni achieves stronger and more stable security guarantees than existing interoperability protocols by deriving its cryptoeconomic security from restaked **\$ETH**. Omni extends its security model further by incorporating staked **\$OMNI** using a dual-staking model. Effectively, the total cryptoeconomic security of Omni is determined by the combined value of restaked **\$ETH** and staked **\$OMNI**.
 
 Using this dual staking model, the total cryptoeconomic security $\textit{C}$ of the system is given by the formula:
 

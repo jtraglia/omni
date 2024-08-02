@@ -1,3 +1,3 @@
-# omni contract go bindings
+# Omni contract Go bindings
 
-Generated go bindings for Omni contracts. Bindings generated with [abigen](https://geth.ethereum.org/docs/tools/abigen).
+Generated Go bindings for Omni contracts. Bindings generated with [abigen](https://geth.ethereum.org/docs/tools/abigen).

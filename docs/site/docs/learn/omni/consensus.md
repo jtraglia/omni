@@ -25,7 +25,7 @@ Integrated Consensus in Omni consists of two main sub-processes, each handling a
 
 ### Finalizing Blocks
 
-The combined efforts of validating Omni EVM transactions and attesting to `XBlock` hashes culminate in a unified consensus vote. If a proposed block garners approval from two-thirds of the validator set, it is finalized and added to the Omni chain. These finalized blocks encompass both the Omni EVM transactions and attested XBlock hashes, enabling full node operators of specific rollup VMs to reconstruct and verify XBlock contents.
+The combined efforts of validating Omni EVM transactions and attesting to `XBlock` hashes culminate in a unified consensus vote. If a proposed block garners approval from at least two-thirds of the validator set, it is finalized and added to the Omni chain. These finalized blocks encompass both the Omni EVM transactions and attested XBlock hashes, enabling full node operators of specific rollup VMs to reconstruct and verify XBlock contents.
 
 ## The Significance of Integrated Consensus
 

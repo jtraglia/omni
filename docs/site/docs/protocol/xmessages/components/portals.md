@@ -10,11 +10,11 @@ Portal contracts are an integral part of Omni and are deployed to every supporte
 
 ## Portal Send Logic
 
- These contracts are specifically designed for initiating cross-chain communications, acting as the gateway for emitting cross-chain messages known as `XMsg`. A notable feature is the "pay at source" fee mechanism, leveraging the native token of the source chain for transaction fees. Moreover, Portal Contracts maintain a record of the omni consensus validator set, essential for the verification of cross-chain message attestations.
+ These contracts are specifically designed for initiating cross-chain communications, acting as the gateway for emitting cross-chain messages known as `XMsg`. A notable feature is the "pay at source" fee mechanism, leveraging the native token of the source chain for transaction fees. Moreover, Portal contracts maintain a record of the Omni consensus validator set, essential for the verification of cross-chain message attestations.
 
 ### Cross-Chain Calls
 
-To initiate a cross-chain call, the Portal Contract provides the `xcall` method. This function is accessible via the `omni.xcall()` helper, which simplifies the process of making cross-chain requests. Upon execution, an `XMsg` Event is emitted, signifying the successful forwarding of the cross-chain message. The `xcall` method is designed to facilitate seamless communication between chains, underpinning the broader objective of interoperability within the Omni protocol ecosystem.
+To initiate a cross-chain call, the Portal contract provides the `xcall` method. This function is accessible via the `omni.xcall()` helper, which simplifies the process of making cross-chain requests. Upon execution, an `XMsg` event is emitted, signifying the successful forwarding of the cross-chain message. The `xcall` method is designed to facilitate seamless communication between chains, underpinning the broader objective of interoperability within the Omni protocol ecosystem.
 
 Below is a summarized fragment for the underlying logic beneath `xcall` from the [Portal contract Solidity source](https://github.com/omni-network/omni/blob/1439d8a99f66a3bb3b7d113c63f8f073512c5377/contracts/src/protocol/OmniPortal.sol):
 
@@ -36,7 +36,7 @@ Below is a summarized fragment for `xsubmit` from the [Portal contract Solidity 
 ```solidity
     /**
      * @notice Submit a batch of XMsgs to be executed on this chain
-     * @param xsub  An xchain submisison, including an attestation root w/ validator signatures,
+     * @param xsub  An xchain submission, including an attestation root w/ validator signatures,
      *              and a block header and message batch, proven against the attestation root.
      */
     function xsubmit(XTypes.Submission calldata xsub) external {
@@ -87,8 +87,8 @@ Checks include:
 
 This step involves:
 
-- **Chain ID Confirmation:** Confirming that the `TargetChainID` matches the local chain ID, ensuring that the messages are destined for the correct chain.
-- **Message Index Verification:** For a new batch, verifying that `WrappedXMsg` indexes start at 0 or follow the last processed message index for ongoing submissions, maintaining the order and integrity of messages.
+- **Chain ID Confirmation:** Confirming that the `SourceChainID` matches the local chain ID, ensuring that the messages are destined for the correct chain.
+- **Message Index Verification:** For a new batch, verifying that `WrappedXMsg` indices start at 0 or follow the last processed message index for ongoing submissions, maintaining the order and integrity of messages.
 
 #### Aggregate Attestation Signatures Verification
 

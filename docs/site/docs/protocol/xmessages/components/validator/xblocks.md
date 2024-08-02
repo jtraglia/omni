@@ -14,7 +14,7 @@ Validators group multiple `XMsg` into an `XBlock`, which includes metadata about
 
 ### 2. Attestation by Validators
 
-Omni protocol validators attest to `XBlock` hashes, ensuring over two-thirds consensus is reached. This attestation process is integral for validating the `XBlock` and its contents before relaying.
+Omni protocol validators attest to `XBlock` hashes, ensuring at least two-thirds consensus is reached. This attestation process is integral for validating the `XBlock` and its contents before relaying.
 
 ### 3. Relayer Role in `XBlock` to `Submission`
 

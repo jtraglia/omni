@@ -8,7 +8,7 @@ Omni was intentionally designed not only to establish a new standard in the inte
 
 ## Fast Finality Mechanisms
 
-Omni’s `XMsg` verification process is designed with a modular approach. By default, Omni validators wait for `XMsg` requests to finalize on Ethereum L1 (2 epochs, ∼12 minutes) before attesting to their validity in consensus. However, low latency finality mechanisms can be substituted so that users can enjoy a UX that mirrors modern cloud applications. Specifically, Omni is exploring implementing transaction insurance mechanisms on source rollups or pre-confirmations from technologies like shared sequencers.
+Omni’s `XMsg` verification process is designed with a modular approach. By default, Omni validators wait for `XMsg` requests to finalize on Ethereum L1 (2 epochs, ∼12 minutes) before attesting to their validity in consensus. However, low-latency finality mechanisms can be substituted so that users can enjoy a UX that mirrors modern cloud applications. Specifically, Omni is exploring implementing transaction insurance mechanisms on source rollups or pre-confirmations from technologies like shared sequencers.
 
 ## Expanded DA and Consensus Support
 

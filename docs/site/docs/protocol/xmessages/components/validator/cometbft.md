@@ -16,11 +16,11 @@ Omni's consensus layer is established through the Halo consensus client which su
 2. CometBFT provides support for DPoS consensus mechanisms, allowing re-staked ETH to be delegated directly to individual Omni validators as part of the network’s security model.
 3. CometBFT is one of the most robust and widely tested PoS consensus models and is already used in many production blockchain networks securing billions of dollars.
 
-By default, Omni validators ensure the integrity of rollup transactions by awaiting their posting and finalization on the Ethereum before attesting to them. This proactive approach mitigates the risk of reorganizations on both Ethereum and the rollup, enhancing the overall security and reliability of the system.
+By default, Omni validators ensure the integrity of rollup transactions by awaiting their posting and finalization on Ethereum before attesting to them. This proactive approach mitigates the risk of reorganizations on both Ethereum and the rollup, enhancing the overall security and reliability of the system.
 
 ### Consensus Process
 
-Omni Consensus clients process the consensus blocks and maintain consensus state that tracks the “status” of each `XBlock` (by the validator set) from `Pending` to `Approved` (including an `AggregateAttestation`). Then only the “latest approved” `XBlock` for each source chain needs to be maintained; earlier `XBlock`s can be trimmed from the state. Validators in the current validator set must attest to all subsequent (after the “last approved”) `XBlock`.
+Omni consensus clients process the consensus blocks and maintain consensus state that tracks the “status” of each `XBlock` (by the validator set) from `Pending` to `Approved` (including an `AggregateAttestation`). Then only the “latest approved” `XBlock` for each source chain needs to be maintained; earlier `XBlock`s can be trimmed from the state. Validators in the current validator set must attest to all subsequent (after the “last approved”) `XBlock`.
 
 #### Validator Set Changes
 
@@ -30,7 +30,7 @@ When the validator set changes, all `XBlock`s marked as `Pending` need to be upd
 - Deleting all attestations by validators not in the current set.
 - Updating the weights of each remaining attestation according to the new validator set.
 
-Validators that already attest to the `Pending` marked `XBlock` during the previous validator set, do not need to re-attest. Only the new set validators must attest (ie. to all `XBlock`s after the latest approved).
+Validators that already attest to the `Pending` marked `XBlock` during the previous validator set, do not need to re-attest. Only the new set validators must attest (i.e., to all `XBlock`s after the latest approved).
 
 ## Execution Consensus
 

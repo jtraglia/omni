@@ -15,13 +15,13 @@ Like validators, Relayers are tasked with monitoring attestations within the Omn
 - Maintaining an `XBlock` cache by tracking all source chain blocks, converting them into `XBlock` format, caching these blocks, and enabling internal indexed querying. This ensures the Relayer has timely access to relevant data for cross-chain message processing.
 - Keeping a vigilant eye on the Omni Consensus Chain state for attested `XBlocks`, preparing for the submission of cross-chain messages once a consensus is reached.
 
-### Decision Making for Message Submission
+### Decision-Making for Message Submission
 
 A key decision that Relayers face is determining the number of `XMsg`s to submit to each destination chain. This decision directly influences the cost of transactions due to factors like data size, gas limits, and the computational overhead required for portal contract verification and message processing.
 
 ### Cross-Network Message Submission
 
-The Relayer waits for the Omni Consensus Layer to confirm that over two-thirds (>66%) of the validator set have attested to the next block for each source chain. Once this quorum is achieved, the Relayer is responsible for submitting the validated cross-chain messages to their respective destination chains, accompanied by the necessary validator signatures and a multi-merkle-proof. Future iterations of the network plan to incentivize this crucial function.
+The Relayer waits for the Omni Consensus Layer to confirm that at least two-thirds (>=66%) of the validator set have attested to the next block for each source chain. Once this quorum is achieved, the Relayer is responsible for submitting the validated cross-chain messages to their respective destination chains, accompanied by the necessary validator signatures and a multi-merkle-proof. Future iterations of the network plan to incentivize this crucial function.
 
 For the actual submission to a destination chain, Relayers generate a merkle-multi-proof for the `XMsg`s that are to be included, based on the `XBlock` attestations root that has reached a quorum. They then craft an EVM transaction containing this data, aiming to ensure its swift inclusion on the destination chain. The transaction structure is as follows:
 
